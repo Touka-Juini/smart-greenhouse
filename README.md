@@ -4,53 +4,71 @@ An Arduino-based smart greenhouse prototype designed to monitor environmental co
 
 ## Overview
 
-The system collects environmental data using an Arduino and displays essential readings through a desktop interface built with Python and Tkinter.
+The system uses an Arduino UNO to collect environmental data and manage connected hardware. A Python dashboard displays essential readings and allows the user to control the fans.
 
 **Key features**
 - Monitor temperature and humidity.
 - Monitor water level.
+- Monitor light intensity.
 - Turn fans on and off and adjust their speed through the dashboard.
-- Automatically control LED lighting based on light conditions.
-- Display environmental information on an LCD.
+- Automatically control LED lighting according to light conditions.
+- Display environmental readings on an LCD.
+
+## Sensors and Hardware
+
+- **DHT22:** Measures temperature and humidity.
+- **Grove Light Sensor:** Detects ambient light intensity.
+- **Water Level Module Sensor:** Monitors the water level.
+- **Arduino UNO:** Processes sensor readings and manages the connected components.
+- **Fans:** Support ventilation and temperature regulation.
+- **LEDs:** Provide lighting when needed.
+- **Water pump:** Supports water circulation.
+- **RGB LCD:** Displays environmental information.
 
 ## System Architecture
 
 ```mermaid
 flowchart TD
-    A[Environmental Sensors] --> B[Arduino]
-    B <--> C[Python Dashboard]
-    B --> D[LCD Display]
-    B --> E[Fans]
-    B --> F[LED Lighting]
-    B --> G[Water Pump]
-    C --> H[Monitoring and Fan Controls]
+    A[DHT22] --> E[Arduino UNO]
+    B[Grove Light Sensor] --> E
+    C[Water Level Sensor] --> E
+    E <--> F[Python Dashboard]
+    E --> G[RGB LCD]
+    E --> H[Fans]
+    E --> I[LED Lighting]
+    E --> J[Water Pump]
+    F --> K[Monitoring and Fan Controls]
 ```
 
-The Arduino reads sensor data and manages connected hardware. The Python dashboard communicates with the Arduino over a serial connection to display readings and provide fan controls.
+The Arduino reads sensor data and manages the connected hardware. The Python dashboard communicates with the Arduino over a serial connection to display readings and provide fan controls.
 
 ## Technologies
 
-- **Hardware:** Arduino UNO, environmental sensors, fans, LCD, and water pump.
+- **Hardware:** Arduino UNO, DHT22, Grove Light Sensor, water-level sensor, fans, LEDs, water pump, and RGB LCD.
 - **Embedded software:** Arduino IDE and C/C++.
 - **Dashboard:** Python, Tkinter, and PySerial.
 - **Libraries:** DHT and RGB_LCD.
 
 ## My Contribution
 
-I worked on the Python dashboard and its interface for monitoring greenhouse conditions and controlling the fans. I also contributed to sensor and actuator integration, particularly the water-level sensor and fan controls.
+I developed the Python dashboard interface for monitoring greenhouse conditions and controlling the fans. I also contributed to sensor and actuator integration, particularly the water-level sensor and fans.
+
+## Project Report
+
+[Read the Smart Greenhouse Project Report (PDF)](ADD_REPORT_LINK_HERE)
 
 ## Media
 
-[View project media](media/)
+[View project photos and interface screenshots](media/)
 
-*Project photos and interface screenshots will be added later.*
+*Project media will be added later.*
 
 ## Future Improvements
 
-- Improve reliability of sensor readings and serial communication.
+- Improve sensor-reading reliability and serial communication.
 - Complete and validate dashboard controls.
 - Add historical graphs for temperature and humidity.
-- Develop a more automated greenhouse monitoring and control system.
+- Expand automated monitoring and greenhouse control.
 
 ## Project Information
 
