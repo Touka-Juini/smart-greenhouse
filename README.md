@@ -55,7 +55,7 @@ I developed the Python dashboard interface for monitoring greenhouse conditions 
 
 ## Project Report
 
-[Read the Smart Greenhouse Project Report (PDF)](ADD_REPORT_LINK_HERE)
+[Read the Smart Greenhouse Project Report (PDF)](docs/smart-greenhouse-rapport.pdf)
 
 ## Media
 
